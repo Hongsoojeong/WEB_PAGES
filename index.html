@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 문서 구조 시맨틱 태그 사용</title>
+    <link rel="stylesheet" href="nav.css" />
+    <script>
+      function GetCookie(name) {
+        var pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+        for (var i = 0; i < pairs.length; i++) {
+          var pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+          var unit = pair.split("=");
+          if (unit[0] == name) return unescape(unit[1]);
+        }
+        return null;
+      }
+      function SetCookie(name, value, expireDate) {
+        var cookieStr =
+          name +
+          "=" +
+          escape(value) +
+          (expireDate == null ? "" : "; expires=" + expireDate.toGMTString());
+        document.cookie = cookieStr;
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <audio id="audio" src="Ariana Grande - Snow In California.mp3"></audio>
+    <div id="msg">Ariana Grande - Snow In California</div>
+    <button id="play" onclick="control(event)">play</button>
+    <button id="pause" onclick="control(event)">pause</button>
+    <button id="replay" onclick="control(event)">replay</button>
+    <button id="vol-" onclick="control(event)">vol-</button>
+    <button id="vol+" onclick="control(event)">vol+</button>
+    <button id="mute on/off" onclick="control(event)">mute on/off</button>
+    <script>
+      var div = document.getElementById("msg");
+      var audio = document.getElementById("audio");
+      function control(e) {
+        var id = e.target.id;
+        if (id == "play") {
+          // play 버튼
+          audio.play(); // 재생
+          div.innerHTML = "Ariana Grande - Snow In California";
+        } else if (id == "pause") {
+          // pause 버튼
+          audio.pause(); // 일시 중지
+          div.innerHTML = "It's paused";
+        } else if (id == "replay") {
+          // replay 버튼
+          audio.load(); // src에 지정된 미디어 다시 로딩
+          audio.play(); // 처음부터 다시 재생
+          div.innerHTML = "Ariana Grande - Snow In California";
+        } else if (id == "vol-") {
+          // vol- 버튼
+          audio.volume -= 0.1; // 음량 0.1 감소
+          if (audio.volume < 0.1) audio.volume = 0;
+          div.innerHTML = "volume -0.1" + "current volume: " + audio.volume;
+        } else if (id == "vol+") {
+          // vol+ 버튼
+          audio.volume += 0.1; // 음량 0.1 증가
+          if (audio.volume > 0.9) audio.volume = 1.0;
+          div.innerHTML = "volume +0.1" + "current volume: " + audio.volume;
+        } else if (id == "mute on/off") {
+          // mute on/off 버튼
+          audio.muted = !audio.muted; // 음소거 토글
+          if (audio.muted) div.innerHTML = "muted";
+          else div.innerHTML = "muted off";
+        }
+      }
+    </script>
+    <header class="header"><a href="index.html">COVID-19</a></header>
+    <nav class="nav" , id="menubar">
+      <ul>
+        <li><a href="covid_symptom.html">코로나 증상</a></li>
+        <li><a href="covid_occurrence.html">확진자 발생 현황</a></li>
+        <li><a href="covid_article.html">코로나 관련 기사</a></li>
+        <li><a href="damage_support_policy.html">피해 지원 정책</a></li>
+        <li><a href="covid_metabus.html">메타버스</a></li>
+      </ul>
+    </nav>
+    <aside class="aside" id="asideLeft"></aside>
+
+    <section class="section">
+      <center>
+        <div id="div">Ariana Grande - Snow In California</div>
+        <img src="이모지.png" alt="이모지" width="250" height="200" />
+        <div id="time">현재 방문</div>
+      </center>
+    </section>
+    <aside class="aside" id="asideRight">
+      직접 마우스로 그림을 그려<br />
+      웹페이지를 꾸며보세요!<canvas
+        id="myCanvas"
+        style="background-color: plum"
+        height="600"
+      >
+      </canvas>
+    </aside>
+    <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
+
+    <script>
+      var username = GetCookie("username");
+      var count = GetCookie("count");
+      var expire = new Date(); // 현재 시간
+      if (username == null) {
+        count = 0;
+        username = prompt("이름을 입력해 주십시오.", "");
+        if (username == null) {
+          alert("이름을 입력하시면 보다 나은 서비스를 제공받을 수 있습니다.");
+          username = "아무개";
+        } else {
+          expire.setTime(expire.getTime() + 365 * 24 * 3600 * 1000); // 1년후
+          SetCookie("username", username, expire);
+        }
+      }
+      count++;
+      expire.setTime(expire.getTime() + 365 * 24 * 3600 * 1000); // 1년후
+      SetCookie("count", count, expire);
+      document.getElementById("div").innerHTML =
+        "<p><h1>" +
+        username +
+        "님" +
+        "<br>" +
+        "COVID-19 사이트의" +
+        "<br>" +
+        count +
+        "번째 방문을 환영합니다!</h1>";
+    </script>
+
+    <script>
+      var current = new Date();
+      var now = new Date(); // 현재 시간 값을 가진 Date 객체 생성
+      var next = new Date(2017, 7, 15, 12, 12, 12); // 7은 8월
+
+      let year = current.getFullYear(); // 년도
+      let month = current.getMonth() + 1; // 월
+      let date = current.getDate(); // 날짜
+      let day = current.getDay(); // 요일
+
+      if (day == 1) {
+        day = "월";
+      }
+      if (day == 2) {
+        day = "화";
+      }
+      if (day == 3) {
+        day = "수";
+      }
+      if (day == 4) {
+        day = "목";
+      }
+      if (day == 5) {
+        day = "금";
+      }
+      if (day == 6) {
+        day = "토";
+      }
+
+      if (day == 7) {
+        day = "일";
+      }
+      document.getElementById("time").innerHTML =
+        "<strong>현재 방문시각: " +
+        year +
+        "년도" +
+        " " +
+        month +
+        "월" +
+        " " +
+        date +
+        "일" +
+        " " +
+        day +
+        "요일" +
+        " " +
+        current.getHours() +
+        "시" +
+        current.getMinutes() +
+        "분" +
+        current.getSeconds() +
+        "초" +
+        "</strong><br>";
+    </script>
+
+    <script>
+      var canvas, context;
+      function init() {
+        canvas = document.getElementById("myCanvas");
+        context = canvas.getContext("2d");
+
+        context.lineWidth = 2; // 선 굵기를 2로 설정
+        context.strokeStyle = "blue";
+
+        // 마우스 리스너 등록. e는 MouseEvent 객체
+        canvas.addEventListener(
+          "mousemove",
+          function (e) {
+            move(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mousedown",
+          function (e) {
+            down(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mouseup",
+          function (e) {
+            up(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mouseout",
+          function (e) {
+            out(e);
+          },
+          false
+        );
+      }
+
+      var startX = 0,
+        startY = 0; // 마우스의 마지막 포인터 좌표
+      var drawing = false;
+      function draw(curX, curY) {
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(curX, curY);
+        context.stroke();
+      }
+      function down(e) {
+        startX = e.offsetX;
+        startY = e.offsetY;
+        drawing = true;
+      }
+      function up(e) {
+        drawing = false;
+      }
+      function move(e) {
+        if (!drawing) return; // 마우스가 눌러지지 않았으면 리턴
+        var curX = e.offsetX,
+          curY = e.offsetY;
+        draw(curX, curY);
+        startX = curX;
+        startY = curY;
+      }
+      function out(e) {
+        drawing = false;
+      }
+    </script>
+  </body>
+</html>
