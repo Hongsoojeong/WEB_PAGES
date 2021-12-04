@@ -3,9 +3,37 @@
   <head>
     <title>확진자 발생현황</title>
     <link rel="stylesheet" href="nav.css" />
+
+    <style>
+      @keyframes bomb {
+        from {
+          font-size: 500%;
+        }
+        to {
+          font-size: 100%;
+        }
+      }
+      #first_head {
+        animation-name: bomb;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+    </style>
+
+    <script>
+      function startScroll(interval) {
+        setInterval("autoScroll()", interval);
+      }
+
+      function autoScroll() {
+        window.scrollBy(0, 20); // 10픽셀 위로 이동
+      }
+    </script>
   </head>
-  <body>
-    <header class="header"><a id="underlink" href="index.html">COVID-19</a></header>
+  <body onload="startScroll(300)">
+    <header class="header">
+      <a id="underlink" href="index.html">COVID-19</a>
+    </header>
     <nav class="nav" , id="menubar">
       <ul>
         <li><a href="covid_symptom.html">코로나 증상</a></li>
@@ -15,13 +43,32 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside"></aside>
+    <aside class="aside" id="left"></aside>
     <section class="section">
       <center>
-<h1>[확진자 발생현황]</h1><br>
-<iframe src="http://ncov.mohw.go.kr/bdBoardList_Real.do" width="800px" height="500px">
-</iframe>
-
+        <h1 id="first_head">[확진자 발생현황]</h1>
+        <br />
+        <iframe
+          src="http://ncov.mohw.go.kr/bdBoardList_Real.do"
+          width="800px"
+          height="600px"
+          alt="http://ncov.mohw.go.kr/"
+        >
+        </iframe>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>[확진자 발생 현황을 보여주는 뉴스 사이트]</h1>
+        <iframe
+          src="  https://www.ytn.co.kr/issue/corona.php"
+          width="800px"
+          height="600px"
+          alt="http://ncov.mohw.go.kr/"
+        >
+        </iframe>
       </center>
     </section>
     <aside class="aside"></aside>

@@ -24,6 +24,7 @@
     </script>
   </head>
   <body onload="init()">
+        <script type="text/javascript" src="그림판.js"></script>
     <audio id="audio" src="Ariana Grande - Snow In California.mp3"></audio>
     <div id="msg" >Ariana Grande - Snow In California</div>
     <button id="play" onclick="control(event)">play</button>
@@ -67,7 +68,75 @@
           else div.innerHTML = "muted off";
         }
       }
-    </script>
+    </script><script>
+      var canvas, context;
+      function init() {
+        canvas = document.getElementById("myCanvas");
+        context = canvas.getContext("2d");
+
+        context.lineWidth = 2; // 선 굵기를 2로 설정
+        context.strokeStyle = "blue";
+
+        // 마우스 리스너 등록. e는 MouseEvent 객체
+        canvas.addEventListener(
+          "mousemove",
+          function (e) {
+            move(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mousedown",
+          function (e) {
+            down(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mouseup",
+          function (e) {
+            up(e);
+          },
+          false
+        );
+        canvas.addEventListener(
+          "mouseout",
+          function (e) {
+            out(e);
+          },
+          false
+        );
+      }
+
+      var startX = 0,
+        startY = 0; // 마우스의 마지막 포인터 좌표
+      var drawing = false;
+      function draw(curX, curY) {
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(curX, curY);
+        context.stroke();
+      }
+      function down(e) {
+        startX = e.offsetX;
+        startY = e.offsetY;
+        drawing = true;
+      }
+      function up(e) {
+        drawing = false;
+      }
+      function move(e) {
+        if (!drawing) return; // 마우스가 눌러지지 않았으면 리턴
+        var curX = e.offsetX,
+          curY = e.offsetY;
+        draw(curX, curY);
+        startX = curX;
+        startY = curY;
+      }
+      function out(e) {
+        drawing = false;
+      }
+</script>
     <header class="header"><a id="underlink" href="index.html">COVID-19</a></header>
     <nav class="nav" , id="menubar">
       <ul>
@@ -78,7 +147,8 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside" id="asideLeft"></aside>
+    <aside class="aside" id="left">
+    </aside>
 
     <section class="section">
       <center>
@@ -87,15 +157,17 @@
         <div id="time" >현재 방문</div>
       </center>
     </section>
+
     <aside class="aside">
-      <strong>직접 마우스로 그림을 그려보세요!</strong><canvas
-        id="myCanvas"
+      <canvas
+      id="myCanvas"
       style="background-color: plum"
-       width=10%;
-       height=80%;
+      width=200px;
+      height=500px;
       >
-      </canvas>
     </aside>
+
+
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
 
     <script>
@@ -180,76 +252,6 @@
         current.getSeconds() +
         "초" +
         "</strong></span><br>";
-    </script>
-
-    <script>
-      var canvas, context;
-      function init() {
-        canvas = document.getElementById("myCanvas");
-        context = canvas.getContext("2d");
-
-        context.lineWidth = 2; // 선 굵기를 2로 설정
-        context.strokeStyle = "blue";
-
-        // 마우스 리스너 등록. e는 MouseEvent 객체
-        canvas.addEventListener(
-          "mousemove",
-          function (e) {
-            move(e);
-          },
-          false
-        );
-        canvas.addEventListener(
-          "mousedown",
-          function (e) {
-            down(e);
-          },
-          false
-        );
-        canvas.addEventListener(
-          "mouseup",
-          function (e) {
-            up(e);
-          },
-          false
-        );
-        canvas.addEventListener(
-          "mouseout",
-          function (e) {
-            out(e);
-          },
-          false
-        );
-      }
-
-      var startX = 0,
-        startY = 0; // 마우스의 마지막 포인터 좌표
-      var drawing = false;
-      function draw(curX, curY) {
-        context.beginPath();
-        context.moveTo(startX, startY);
-        context.lineTo(curX, curY);
-        context.stroke();
-      }
-      function down(e) {
-        startX = e.offsetX;
-        startY = e.offsetY;
-        drawing = true;
-      }
-      function up(e) {
-        drawing = false;
-      }
-      function move(e) {
-        if (!drawing) return; // 마우스가 눌러지지 않았으면 리턴
-        var curX = e.offsetX,
-          curY = e.offsetY;
-        draw(curX, curY);
-        startX = curX;
-        startY = curY;
-      }
-      function out(e) {
-        drawing = false;
-      }
     </script>
   </body>
 </html>

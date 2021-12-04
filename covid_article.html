@@ -3,9 +3,20 @@
   <head>
     <title>코로나 관련기사</title>
     <link rel="stylesheet" href="nav.css" />
+
   </head>
-  <body>
-    <header class="header"><a id="underlink" href="index.html">COVID-19</a></header>
+  <body onload="drawImage()">
+  <script type="text/javascript" src="그림판.js"></script>
+<script>
+  function drawImage() {
+	var sel = document.getElementById("article");
+	var img = document.getElementById("article_2");
+	img.src = sel.options[sel.selectedIndex].value;
+}
+</script>
+    <header class="header">
+      <a id="underlink" href="index.html">COVID-19</a>
+    </header>
     <nav class="nav" , id="menubar">
       <ul>
         <li><a href="covid_symptom.html">코로나 증상</a></li>
@@ -15,15 +26,29 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside">aside</aside>
+    <aside class="aside" id="left"></aside>
     <section class="section">
       <center>
-       <h1>[코로나 관련 기사]</h1>
-       <br>
-       
+        <h1>[코로나 관련 기사]</h1>
+        <br />
+        <form>
+<select id="article" onchange="drawImage()">
+	<option value="article_1.jpg"> 거리두기
+	<option value="article_2.jpg" selected> 백신 현황
+	<option value="article_3.jpg"> 변이바이러스
+</select><br>
+<img id="article_2" src="article_1.jpg" alt="">
+</form>
       </center>
     </section>
-    <aside class="aside">aside</aside>
+    <aside class="aside">
+      <canvas
+      id="myCanvas"
+      style="background-color: plum"
+      width=100px;
+      height=500em;
+      >
+    </aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
   </body>
 </html>

@@ -3,9 +3,72 @@
   <head>
     <title>피해 지원정책</title>
     <link rel="stylesheet" href="nav.css" />
+    <style>
+      #logoDiv {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      li,
+      a {
+        color: blue;
+      }
+      h3,
+      span {
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-    <header class="header"><a id="underlink" href="index.html">COVID-19</a></header>
+    <script>
+      window.onbeforeprint = function (e) {
+        logoDiv = document.getElementById("logoDiv");
+        logoDiv.style.display = "block"; // block으로 변경. 로고가 화면에 나타나게 함
+      };
+      window.onafterprint = hideLogo;
+      function hideLogo() {
+        logoDiv = document.getElementById("logoDiv");
+        logoDiv.style.display = "none"; // <div> 영역이 보이지 않게 함
+        logoDiv.style.zIndex = -1; // 이미지를 문서의 맨 바닥으로 배치
+      }
+      function hideMenu() {
+        alert("오른쪽 클릭이 금지되어있는 창입니다.");
+        return false;
+      }
+      document.oncontextmenu = hideMenu;
+
+      function change1() {
+        obj = document.getElementById("content1");
+        obj.style.fontSize = "30px";
+      }
+      function change_min1() {
+        obj = document.getElementById("content1");
+        obj.style.fontSize = "17px";
+      }
+      function change2() {
+        obj = document.getElementById("content2");
+        obj.style.fontSize = "30px";
+      }
+      function change_min2() {
+        obj = document.getElementById("content2");
+        obj.style.fontSize = "17px";
+      }
+
+      function change3() {
+        obj = document.getElementById("content3");
+        obj.style.fontSize = "30px";
+      }
+      function change_min3() {
+        obj = document.getElementById("content3");
+        obj.style.fontSize = "17px";
+      }
+    </script>
+    <header class="header">
+      <a id="underlink" href="index.html">COVID-19</a>
+    </header>
     <nav class="nav" , id="menubar">
       <ul>
         <li><a href="covid_symptom.html">코로나 증상</a></li>
@@ -15,25 +78,108 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside"></aside>
+    <aside class="aside" id="left"></aside>
     <section class="section">
-<center>    
-<h1>[피해 지원 정책]</h1><br>
-<ul id="people_list">
-<li> <a href="#일반인">일반인(대국민)</a></li>
-<li> <a href="#취약계층">취약계층</a></li>
-<li> <a href="#소상공인 및 기업">소상공인 및 기업</a></li>
-<li> <a href="#의료기관">의료기관</a></li>
-<li><a href="#발생지역">발생지역</a></li>
-<li> <a href="#기타">기타</a></li>
-</ul>
-<h3><span id="일반인(대국민)">일반인(대국민)</span></h3>
-<img src="코로나 지원정책_대국민.jpg" width="60%" height="800px" >
-<br><br><br>
-<h3><span id="취약계층">취약계층</span></h3>
-<img src="코로나 지원정책_대국민.jpg" width="60%" height="800px">
+      <center>
+        <div id="logoDiv">
+          <img src="사인.png" alt="이미지 없습니다." />
+        </div>
+        <h1>[피해 지원 정책]</h1>
+        <a href="#소상공인 운전자금">#소상공인 운전자금</a><br />
+        <a href="#코로나19 심리상담">#코로나19 심리상담</a><br />
 
-</center>
+        <a href="#코로나19 금융지원">#코로나19 금융지원 특별상담 센터 내용</a
+        ><br />
+        <br /><br /><br /><br />
+        <h3><span id="소상공인 운전자금">소상공인 운전자금</span></h3>
+
+        📃크게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change1()">[+]</button>
+        <br />
+        📃다시 작게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change_min1()">[-]</button>
+        <br />
+        <br />
+        <div id="content1">
+          시행기관 : 파주시청<br /><br />
+          지원대상 : 1. 사업자등록 후 3개월 이상 경과한 관내 소상공인<br />
+          2. 특례보증 받은 소상공인<br />
+          <br />
+          신청 및 지원기간: 2021.1.1 ~ 재원소진 시 <br />
+          <br />
+          지원 내용 : 1. 신청절차 : 경기신용보증재단 파주지점 또는 시중은행/<br />
+          경기신용보증재단 홈페이지<br />
+          2. 담보가 없어 대출이 어려운 소상공인에게 특례보증을 통해 대출지원<br />
+          <br />
+          지원 금액 : 1. 소상공인 특례보증<br />
+          - 업체당 한도 : 5000만원<br />
+          2. 소상공인 이차보전<br />
+          - 이자지원(4년간)일반2%, 청년2.5%<br />
+
+          <br />
+          <a
+            href="https://dong.paju.go.kr/dong/user/board/BD_board.view.do?bbsCd=1022&q_ctgCd=4063&seq=20210126102255946"
+            >관련 사이트 (URL)</a
+          >
+          <br />
+
+          <br />
+          문의처 : 경기신용보증재단 파주지점 1577-5900, 031-942-7521<br />
+          내선번호 107~109<br />
+        </div>
+
+        <br />
+
+        <br /><br /><br />
+
+        <h3><span id="코로나19 심리상담">코로나19 심리상담</span></h3>
+        📃크게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change2()">[+]</button>
+        <br />
+        📃다시 작게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change_min2()">[-]</button>
+        <br />
+        <br />
+        <div id="content2">
+          시행기관 : 보건복지부<br /><br />
+          지원대상 : 확진자 및, 가족, 격리자 및 일반인<br /><br />
+          신청 및 지원기간 : 2020.1.29~ <br /><br />
+          지원 내용 : 감염병에 대한 국민의 과도한 불안과 스트레스를 <br />
+          예방하기 위한 심리지원과 관련 정보 제공<br /><br />
+          *통합심리지원단- 국가트라우마센터, 국립정신병원(4개), <br />
+          광역 및 기초정신건강복지센터(260개소) 참여<br />
+          <br /><br />
+          심리상담 핫라인 1577-0199 <br />
+          *국가트라우마센터 (02-2204-0001~2), 영남권 트라우마센터(055-270-2777),
+          <br />
+          *정신건강복지센터(1577-0199) <br />
+          *대표전화 연결 시 시, 군, 구 설치 정신건강복지센터 또는 보건소로 연결
+        </div>
+        <br /><br /><br />
+
+        <h3>
+          <span id="코로나19 금융지원"
+            >[코로나19 금융지원 특별상담 센터 내용]</span
+          >
+        </h3>
+        📃크게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change3()">[+]</button>
+        <br />
+        📃다시 작게 보려면 아래 버튼을 클릭해주세요📃<br />
+        <button onclick="change_min3()">[-]</button>
+        <br />
+        <br />
+        <div id="content3">
+          시행기관 : 금융감독원<br /><br />
+          지원대상 : 중소기업 및 대국민<br /><br />
+          지원 내용 : 코로나19 금융지원 관련 특별상담 진행 <br />
+          - 정책금융, 금융권지원제도<br /><br />
+          문의처 : 금융감독원「중소기업 금융애로 상담센터」1332 → 6번 선택
+        </div>
+        <br />
+        <br />
+        <br />
+      </center>
     </section>
     <aside class="aside"></aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>

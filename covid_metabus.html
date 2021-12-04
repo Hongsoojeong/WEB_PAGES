@@ -5,6 +5,26 @@
     <link rel="stylesheet" href="nav.css" />
   </head>
   <body>
+
+
+    <script>
+// 미리 로딩해둘 이미지 이름 배열
+var files = ["gather메타버스.jpeg","하나은행.jpeg","구찌.jpeg"];
+var imgs = new Array();
+for(var i=0; i<files.length; i++) {
+	imgs[i] = new Image(); // 이미지 객체 생성
+	imgs[i].src = files[i]; // 이미지 로딩
+}
+
+// 다음 이미지 출력
+var next = 1;
+function change(img) {
+	img.src = imgs[next].src; // 이미지 변경
+	next++; // 다음 이미지
+	next %= imgs.length; // 개수를 넘으면 처음으로
+}
+</script>
+
     <header class="header"><a id="underlink" href="index.html">COVID-19</a></header>
     <nav class="nav" , id="menubar">
       <ul>
@@ -15,21 +35,28 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside">aside</aside>
-    <section class="section">
+    <aside class="aside" id="left"></aside>    <section class="section">
       <center>
-        <h1>[메타버스]</h1><br>
-        <h3 id="gathertown">메타버스(metaverse)란?</h3>
+        <h1 id="gathertown">[메타버스]</h1><br>
+        <img
+		 src="gather.jpeg" alt="."  width="500" height="300" 
+ 		 onclick="change(this)">
+      <br>
+      ▲ 메타버스 관련 사진
+      <br>
+      <h3>이미지를 클릭하면 다음 이미지가 넘어갑니다</h3><br>
+        <h2 id="gathertown">메타버스(metaverse)란?</h2>
         메타버스 또는 확장 가상 세계는 가상, 초월을 의미하는 '메타'(meta)와 세계, 우주를 의미하는 '유니버스'(universe)를 합성한 신조어다.<br>
         이는 3차원에서 실제 생활과 법적으로 인정되는 활동인 직업, 금융, 학습 등이 연결된 가상 세계를 뜻한다.<br>구체적으로, 정치와 경제, 사회, 문화의 전반적 측면에서 현실과 비현실이 공존하는 생활형, 게임형 가상 세계라는
         의미로 폭넓게 사용한다.<br><br><br><br><br>
-        🤍<span id="gathertown"><strong>아래 사진을 클릭하여 Gather로 접속해보세요!</span></strong>🤍<br>
+        <h1 id="gathertown">[메타버스 체험하기]</h1>
+        🤍<span ><strong>아래 사진을 클릭하여 Gather로 접속해보세요!</span></strong>🤍<br>
         <a href="https://www.gather.town/" target="blank" >
         <img src="gather.jpeg" width="300" height="200">
-        </a>
+        </a><br><br>
       </center>
     </section>
-    <aside class="aside">aside</aside>
+    <aside class="aside"></aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
   </body>
 </html>
