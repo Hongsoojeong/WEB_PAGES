@@ -27,9 +27,11 @@
 }
 
 button {
+  box-shadow: 0.7px 0.7px 0.7px 0.7px pink;
+  background-color: white;
+  border-radius: 0.7em;
   font-family: "Elice Digital Baeum", sans-serif;
 
-  background-color: white;
   color: black;
 }
 
@@ -91,4 +93,7 @@ a:visited {
 }
 #gathertown:hover {
   background-color: aliceblue;
+}
+#people_list {
+  list-style-type: none; /* 마커 삭제 */
 }
