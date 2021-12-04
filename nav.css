@@ -57,6 +57,7 @@ body {
   padding-top: 1%;
   padding-bottom: 1%;
   background: white;
+  background-image: url("코로나.png");
 }
 .nav {
   text-align: center;

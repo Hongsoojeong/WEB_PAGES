@@ -14,6 +14,19 @@
 	img.src = sel.options[sel.selectedIndex].value;
 }
 </script>
+<style>
+  select {
+width: 200px;
+padding: .8em .5em;
+font-family: "Elice Digital Baeum", sans-serif;
+border-radius: 0px;
+
+}
+select:hover{
+background-color: aliceblue;
+}
+
+</style>
     <header class="header">
       <a id="underlink" href="index.html">COVID-19</a>
     </header>
@@ -29,7 +42,7 @@
     <aside class="aside" id="left"></aside>
     <section class="section">
       <center>
-        <h1>[코로나 관련 기사]</h1>
+        <h1 id="gathertown">[코로나 관련 기사]</h1>
         <br />
         <form>
 <select id="article" onchange="drawImage()">
