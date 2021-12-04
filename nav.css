@@ -89,3 +89,6 @@ a:link {
 a:visited {
   color: black;
 }
+#gathertown:hover {
+  background-color: aliceblue;
+}
