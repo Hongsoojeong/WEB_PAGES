@@ -3,6 +3,33 @@
   <head>
     <title>코로나 증상</title>
     <link rel="stylesheet" href=" nav.css" />
+      <style>
+        table {
+          /* 이중 테두리 제거 */
+          border-collapse: collapse;
+        }
+      
+        td,
+        th {
+          /* 모든 셀에 적용 */
+          text-align: center;
+          padding: 5px;
+          height: 15px;
+          width: 100px;
+        }
+      
+        thead,
+        tfoot {
+          /* <thead>의 모든 셀에 적용 */
+          background: black;
+          color: white;
+        }
+      
+        tbody tr:nth-child(even) {
+          /* 짝수 <tr>에 적용*/
+          background: aliceblue;
+        }
+      </style>
   </head>
   <body>
     <header class="header"><a href="index.html">COVID-19</a></header>
@@ -15,14 +42,67 @@
         <li><a href="covid_metabus.html">메타버스</a></li>
       </ul>
     </nav>
-    <aside class="aside">aside</aside>
+    <aside class="aside"></aside>
     <section class="section">
+      <br>
       <center>
-        COVID-19 사이트의 N번째 방문을 환영합니다. <br /><br />
-        <img src="이모지.png" alt="이모지" width="120" height="100" />
+        <h1>코로나 증상</h1>
+        <br>
+        <table>
+          <thead>
+            <tr>
+              <th>이름</th>
+              <th>HTML</th>
+              <th>CSS</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>합</td>
+              <td>310</td>
+              <td>249</td>
+            </tr>
+          <tbody>
+            <tr>
+              <td>황기태</td>
+              <td>80</td>
+              <td>70</td>
+            </tr>
+            <tr>
+              <td>이재문</td>
+              <td>95</td>
+              <td>99</td>
+            </tr>
+            <tr>
+              <td>이병은</td>
+              <td>85</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>김남윤</td>
+              <td>50</td>
+              <td>40</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <br><br><br><br>
+        <h1>코로나 증상 영상</h1>
+        <h3>실제 코로나19 완치자들에게 직접 들어보는 코로나19 감염 증상 (KBS_744회_2020.09.09)
+</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EiopmxT6xBk" title="YouTube video player"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+<br>
+      <br>
+      <br>
+      <br>
+      <h1>코로나 자가진단 키트 구매</h1>
+<div style="color:blueviolet;"><a href="https://m.shoppinghow.kakao.com/m/search/q/%EC%BD%94%EB%A1%9C%EB%82%98%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8%ED%82%A4%ED%8A%B8"><h3>바로가기 링크 누르기</a></h3></div>      
+<br>
+<br>
       </center>
     </section>
-    <aside class="aside">aside</aside>
+    <aside class="aside"></aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
   </body>
 </html>
