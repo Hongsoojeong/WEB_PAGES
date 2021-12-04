@@ -84,11 +84,11 @@
       <center>
         <div id="div">Ariana Grande - Snow In California</div>
         <img src="이모지.png" alt="이모지" width="25%" height="20%" />
-        <div id="time">현재 방문</div>
+        <div id="time" >현재 방문</div>
       </center>
     </section>
     <aside class="aside">
-      직접 마우스로 그림을 그려보세요!<canvas
+      <strong>직접 마우스로 그림을 그려보세요!</strong><canvas
         id="myCanvas"
         style="background-color: plum"
        width=10%;
@@ -116,14 +116,14 @@
       expire.setTime(expire.getTime() + 365 * 24 * 3600 * 1000); // 1년후
       SetCookie("count", count, expire);
       document.getElementById("div").innerHTML =
-        "<p><h1>" +
+        "<p><h1><span style=blue>" +
         username +
-        "님" +
+        "</span>님" +
         "<br>" +
         "COVID-19 사이트의" +
-        "<br>" +
+        "<br><span style=color:red>"+
         count +
-        "번째 방문을 환영합니다!</h1>";
+        "</span>번째 방문을 환영합니다!</h1>";
     </script>
 
     <script>
@@ -159,7 +159,7 @@
         day = "일";
       }
       document.getElementById("time").innerHTML =
-        "<strong>현재 방문시각: " +
+        "<strong>현재 방문시각: <span style=color:blue>" +
         year +
         "년도" +
         " " +
@@ -178,7 +178,7 @@
         "분" +
         current.getSeconds() +
         "초" +
-        "</strong><br>";
+        "</strong></span><br>";
     </script>
 
     <script>
