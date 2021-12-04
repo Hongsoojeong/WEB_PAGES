@@ -54,12 +54,12 @@
           // vol- 버튼
           audio.volume -= 0.1; // 음량 0.1 감소
           if (audio.volume < 0.1) audio.volume = 0;
-          div.innerHTML = "volume -0.1" + "current volume: " + audio.volume;
+          div.innerHTML = "volume -0.1 | " + "current volume: " + audio.volume.toFixed(2);
         } else if (id == "vol+") {
           // vol+ 버튼
           audio.volume += 0.1; // 음량 0.1 증가
           if (audio.volume > 0.9) audio.volume = 1.0;
-          div.innerHTML = "volume +0.1" + "current volume: " + audio.volume;
+          div.innerHTML = "volume +0.1 | " + "current volume: " + audio.volume.toFixed(2);
         } else if (id == "mute on/off") {
           // mute on/off 버튼
           audio.muted = !audio.muted; // 음소거 토글
