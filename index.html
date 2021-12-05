@@ -27,43 +27,7 @@
   <body onload="init()">
         <script type="text/javascript" src="그림판.js"></script>
 
-    <script>
-      var div = document.getElementById("msg");
-      var audio = document.getElementById("audio");
-      function control(e) {
-        var id = e.target.id;
-        if (id == "play") {
-          // play 버튼
-          audio.play(); // 재생
-          div.innerHTML = "Ariana Grande - Snow In California";
-        } else if (id == "pause") {
-          // pause 버튼
-          audio.pause(); // 일시 중지
-          div.innerHTML = "It's paused";
-        } else if (id == "replay") {
-          // replay 버튼
-          audio.load(); // src에 지정된 미디어 다시 로딩
-          audio.play(); // 처음부터 다시 재생
-          div.innerHTML = "Ariana Grande - Snow In California";
-        } else if (id == "vol-") {
-          // vol- 버튼
-          audio.volume -= 0.1; // 음량 0.1 감소
-          if (audio.volume < 0.1) audio.volume = 0;
-          div.innerHTML = "volume -0.1 | " + "current volume: " + audio.volume.toFixed(2);
-        } else if (id == "vol+") {
-          // vol+ 버튼
-          audio.volume += 0.1; // 음량 0.1 증가
-          if (audio.volume > 0.9) audio.volume = 1.0;
-          div.innerHTML = "volume +0.1 | " + "current volume: " + audio.volume.toFixed(2);
-        } else if (id == "mute on/off") {
-          // mute on/off 버튼
-          audio.muted = !audio.muted; // 음소거 토글
-          if (audio.muted) div.innerHTML = "muted";
-          else div.innerHTML = "muted off";
-        }
-      }
-
-    </script>
+   
     <script>
       var canvas, context;
       function init() {
@@ -150,6 +114,7 @@
 
     <section class="section">
       <center>
+        <div id="div">안녕하세요</div>
         <img src="이모지.png" alt="이모지" width="25%" height="20%" />
         <div id="time" >현재 방문</div>
       </center>
