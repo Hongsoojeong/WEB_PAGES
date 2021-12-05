@@ -16,11 +16,14 @@
       #first_head {
         animation-name: bomb;
         animation-duration: 5s;
-        animation-iteration-count: infinite;
+        animation-iteration-count: 1;
       }
     </style>
 
     <script>
+      function stop() {
+        var stopIt = document.getElementById("first_head");
+      }
       function startScroll(interval) {
         setInterval("autoScroll()", interval);
       }
@@ -48,6 +51,12 @@
       <center>
         <h1 id="first_head">[확진자 발생현황]</h1>
         <br />
+        <h3>
+          <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do" target="blank"
+            >밑에 페이지가 안뜰 경우 클릭하여 해당 링크로 이동해보세요</a
+          >
+        </h3>
+        <br />
         <iframe
           src="http://ncov.mohw.go.kr/bdBoardList_Real.do"
           width="800px"
@@ -69,9 +78,12 @@
           alt="http://ncov.mohw.go.kr/"
         >
         </iframe>
+        <br />
+
+        <br />
       </center>
     </section>
-    <aside class="aside"></aside>
+    <aside class="aside" id="right"></aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
   </body>
 </html>

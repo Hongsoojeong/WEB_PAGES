@@ -3,30 +3,29 @@
   <head>
     <title>코로나 관련기사</title>
     <link rel="stylesheet" href="nav.css" />
-
   </head>
   <body onload="drawImage()">
-  <script type="text/javascript" src="그림판.js"></script>
-<script>
-  function drawImage() {
-	var sel = document.getElementById("article");
-	var img = document.getElementById("article_2");
-	img.src = sel.options[sel.selectedIndex].value;
-}
-</script>
-<style>
-  select {
-width: 200px;
-padding: .8em .5em;
-font-family: "Elice Digital Baeum", sans-serif;
-border-radius: 0px;
-
-}
-select:hover{
-background-color: aliceblue;
-}
-
-</style>
+    <script type="text/javascript" src="그림판.js"></script>
+    <script>
+      function drawImage() {
+        var sel = document.getElementById("article");
+        var img = document.getElementById("article_2");
+        img.src = sel.options[sel.selectedIndex].value;
+      }
+    </script>
+    <style>
+      select {
+        width: 200px;
+        height: 45px;
+        padding: 0.8em 0.5em;
+        font-family: "Elice Digital Baeum", sans-serif;
+        border-radius: 0.7em;
+        margin-bottom: 10px;
+      }
+      select:hover {
+        background-color: aliceblue;
+      }
+    </style>
     <header class="header">
       <a id="underlink" href="index.html">COVID-19</a>
     </header>
@@ -45,23 +44,20 @@ background-color: aliceblue;
         <h1 id="gathertown">[코로나 관련 기사]</h1>
         <br />
         <form>
-<select id="article" onchange="drawImage()">
-	<option value="article_1.jpg"> 거리두기
-	<option value="article_2.jpg" selected> 백신 현황
-	<option value="article_3.jpg"> 변이바이러스
-</select><br>
-<img id="article_2" src="article_1.jpg" alt="">
-</form>
+          <select id="article" onchange="drawImage()">
+            <option value="article_1.jpg">거리두기</option>
+            <option value="article_2.jpg" selected>백신 현황</option>
+            <option value="article_3.jpg">변이바이러스</option></select
+          ><br />
+          <img
+            id="article_2"
+            src="article_1.jpg"
+            alt=""
+          /><br /><br /><br /><br /><br /><br />
+        </form>
       </center>
     </section>
-    <aside class="aside">
-      <canvas
-      id="myCanvas"
-      style="background-color: plum"
-      width=100px;
-      height=500em;
-      >
-    </aside>
+    <aside class="aside" id="right"></aside>
     <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
   </body>
 </html>
