@@ -22,17 +22,11 @@
         document.cookie = cookieStr;
       }
     </script>
+
   </head>
   <body onload="init()">
         <script type="text/javascript" src="그림판.js"></script>
-    <audio id="audio" src="Ariana Grande - Snow In California.mp3"></audio>
-    <div id="msg" >Ariana Grande - Snow In California</div>
-    <button id="play" onclick="control(event)">play</button>
-    <button id="pause" onclick="control(event)">pause</button>
-    <button id="replay" onclick="control(event)">replay</button>
-    <button id="vol-" onclick="control(event)">vol-</button>
-    <button id="vol+" onclick="control(event)">vol+</button>
-    <button id="mute on/off" onclick="control(event)">mute on/off</button>
+
     <script>
       var div = document.getElementById("msg");
       var audio = document.getElementById("audio");
@@ -68,7 +62,9 @@
           else div.innerHTML = "muted off";
         }
       }
-    </script><script>
+
+    </script>
+    <script>
       var canvas, context;
       function init() {
         canvas = document.getElementById("myCanvas");
@@ -150,9 +146,10 @@
     <aside class="aside" id="left">
     </aside>
 
+
+
     <section class="section">
       <center>
-        <div id="div">Ariana Grande - Snow In California</div>
         <img src="이모지.png" alt="이모지" width="25%" height="20%" />
         <div id="time" >현재 방문</div>
       </center>
@@ -169,7 +166,56 @@
     </aside>
 
 
-    <footer class="footer">202003763 웹프로그래밍 과제 홍수정</footer>
+    <footer class="footer"><span style=color:pink;>202003763 웹프로그래밍 과제 홍수정</span><br>
+    <audio id="audio" src="Ariana Grande - Snow In California.mp3"></audio>
+    <div id="msg" >Ariana Grande - Snow In California</div>
+    <button id="play" onclick="control(event)">play</button>
+    <button id="pause" onclick="control(event)">pause</button>
+    <button id="replay" onclick="control(event)">replay</button>
+    <button id="vol-" onclick="control(event)">vol-</button>
+    <button id="vol+" onclick="control(event)">vol+</button>
+    <button id="mute on/off" onclick="control(event)">mute on/off</button>
+
+  </footer>
+
+      <script>
+      var div = document.getElementById("msg");
+      var audio = document.getElementById("audio");
+      function control(e) {
+        var id = e.target.id;
+        if (id == "play") {
+          // play 버튼
+          audio.play(); // 재생
+          div.innerHTML = "Ariana Grande - Snow In California";
+        } else if (id == "pause") {
+          // pause 버튼
+          audio.pause(); // 일시 중지
+          div.innerHTML = "It's paused";
+        } else if (id == "replay") {
+          // replay 버튼
+          audio.load(); // src에 지정된 미디어 다시 로딩
+          audio.play(); // 처음부터 다시 재생
+          div.innerHTML = "Ariana Grande - Snow In California";
+        } else if (id == "vol-") {
+          // vol- 버튼
+          audio.volume -= 0.1; // 음량 0.1 감소
+          if (audio.volume < 0.1) audio.volume = 0;
+          div.innerHTML = "volume -0.1 | " + "current volume: " + audio.volume.toFixed(2);
+        } else if (id == "vol+") {
+          // vol+ 버튼
+          audio.volume += 0.1; // 음량 0.1 증가
+          if (audio.volume > 0.9) audio.volume = 1.0;
+          div.innerHTML = "volume +0.1 | " + "current volume: " + audio.volume.toFixed(2);
+        } else if (id == "mute on/off") {
+          // mute on/off 버튼
+          audio.muted = !audio.muted; // 음소거 토글
+          if (audio.muted) div.innerHTML = "muted";
+          else div.innerHTML = "muted off";
+        }
+      }
+    </script>
+
+
 
     <script>
       var username = GetCookie("username");
@@ -254,5 +300,6 @@
         "초" +
         "</strong></span><br>";
     </script>
+    
   </body>
 </html>

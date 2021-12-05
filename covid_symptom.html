@@ -7,7 +7,9 @@
         table {
           /* 이중 테두리 제거 */
           border-collapse: collapse;
+    
         }
+ 
       
         td,
         th {
@@ -17,6 +19,10 @@
           height: 15px;
           width: 100px;
         }
+
+        td:hover{
+           background-color: aliceblue;
+        }
       
         thead,
         tfoot {
@@ -25,10 +31,7 @@
           color: white;
         }
       
-        tbody tr:nth-child(even) {
-          /* 짝수 <tr>에 적용*/
-          background: aliceblue;
-        }
+
       </style>
   </head>
   <body height:auto;>
@@ -81,6 +84,10 @@
         <h1 id="gathertown">[코로나 증상 영상]</h1>
         <h3>실제 코로나19 완치자들에게 직접 들어보는 코로나19 감염 증상 (KBS_744회_2020.09.09)
 </h3>
+<h3>
+    <a href="https://www.youtube.com/embed/EiopmxT6xBk" target="blank"
+            >밑에 동영상이 안뜰 경우 클릭하여 해당 링크로 이동해보세요</a
+          ></h3><br>
     <iframe src="https://www.youtube.com/embed/EiopmxT6xBk" title="YouTube video player"
     width="500" height="300" 
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -89,9 +96,14 @@
       <br>
       <br>
       <br>
+      <script>
+function load(URL) {
+	window.open(URL, "myWin", "left=300,top=300,width=500,height=500");
+}
+</script>
       <h1 id="gathertown">[코로나 자가진단 키트 구매]</h1>
-<div style="color:pink;"><a id="underlink" href="https://m.shoppinghow.kakao.com/m/search/q/%EC%BD%94%EB%A1%9C%EB%82%98%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8%ED%82%A4%ED%8A%B8" target="blank">
-  <h3>✨바로가기 링크 누르기✨</a></h3></div>      
+<div id="goToLink"><a href="javascript:load('https://m.shoppinghow.kakao.com/m/search/q/%EC%BD%94%EB%A1%9C%EB%82%98%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8%ED%82%A4%ED%8A%B8')">
+<h3>✨바로가기 링크 누르기✨</a></h3><br></div> 
 <br>
 <br>
       </center>
