@@ -23,7 +23,7 @@ for(var i=0; i<files.length; i++) {
 
 // 다음 이미지 출력
 var next = 1;
-function change(img) {
+function change_img(img) {
 	img.src = imgs[next].src; // 이미지 변경
 	next++; // 다음 이미지
 	next %= imgs.length; // 개수를 넘으면 처음으로
@@ -53,8 +53,8 @@ function change() {
       <center>
         <h1 id="gathertown">[메타버스]</h1><br>
         <img
-		 src="gather.jpeg" alt="."  width="500" height="300" 
- 		 onclick="change(this)">
+src="gather.jpeg" alt="."  width="500" height="300" 
+ 		 onclick="change_img(this)">
       <br>
       ▲ 메타버스 관련 사진
       <br>
